@@ -76,3 +76,15 @@ pipeline:
                 - AllErrors
               action:
                 type: Abort
+  notificationRules:
+    - name: xcfd
+      identifier: xcfd
+      pipelineEvents:
+        - type: StepFailed
+      notificationMethod:
+        type: Email
+        spec:
+          userGroups: []
+          recipients:
+            - jack@twitter.com
+      enabled: true
